@@ -3,10 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <title>Currency Converter</title>
 </head>
 <body>
     <h1>Forex Currency Converter</h1>
-    
+    <form action="/convert">
+        <h3>Select Currency to convert from:</h3>
+    <select name="convert_from" required>
+      <option value="" disabled selected hidden>Choose a currency code</option>
+      <option value="EUR">EUR - Euro Member Countries</option>
+      <option value="IDR">IDR - Indonesia Rupiah</option>
+      <option value="BGN">BGN - Bulgaria Lev</option>
+      <option value="ILS">ILS - Israel Shekel</option>
+      <option value="GBP">GBP - United Kingdom Pound </option>
+      <option value="DKK">DKK - Denmark Krone</option>
+      <option value="CAD">CAD - Canada Dollar </option>
+      <option value="JPY">JPY - Japan Yen</option>
+      <option value="HUF">HUF - Hungary Forint</option>
+      <option value="RON">RON - Romania New Leu </option>
+      <option value="MYR">MYR - Malaysia Ringgit</option>
+      <option value="SEK">SEK - Sweden Krona</option>
+      <option value="SGD">SGD - Singapore Dollar</option>
+      <option value="HKD">HKD - Hong Kong Dollar</option>
+      <option value="AUD">AUD - Australia Dollar </option>
+      <option value="CHF">CHF - Switzerland Franc</option>
+      <option value="KRW">KRW - Korea (South) Won</option>
+      <option value="CNY">CNY - China Yuan Renminbi</option>
+      <option value="TRY">TRY - Turkey Lira  </option>
+      <option value="HRK">HRK - Croatia Kuna </option>
+      <option value="NZD">NZD - New Zealand Dollar</option>
+      <option value="THB">THB - Thailand Baht</option>
+      <option value="USD">USD - United States Dollar </option>
+      <option value="NOK">NOK - Norway Krone </option>
+      <option value="RUB">RUB - Russia Ruble </option>
+      <option value="TINR">TINR - India Rupee  </option>
+      <option value="MXN">MXN - Mexico Peso</option>
+      <option value="CZK">CZK - Czech Republic Koruna</option>
+      <option value="BRL">BRL - Brazil Real</option>
+      <option value="PLN">PLN - Poland Zloty  </option>
+      <option value="PHP">PHP - Philippines Peso  </option>
+      <option value="ZAR">ZAR - South Africa Rand  </option>
+    </select>
+    <h3>Select Currency to convert to</h3>
+    <select name="convert_to" required>
+      <option value="" disabled selected hidden>Choose a currency code</option>
+      <option value="EUR">EUR - Euro Member Countries</option>
+      <option value="IDR">IDR - Indonesia Rupiah</option>
+      <option value="BGN">BGN - Bulgaria Lev</option>
+      <option value="ILS">ILS - Israel Shekel</option>
+      <option value="GBP">GBP - United Kingdom Pound </option>
+      <option value="DKK">DKK - Denmark Krone</option>
+      <option value="CAD">CAD - Canada Dollar </option>
+      <option value="JPY">JPY - Japan Yen</option>
+      <option value="HUF">HUF - Hungary Forint</option>
+      <option value="RON">RON - Romania New Leu </option>
+      <option value="MYR">MYR - Malaysia Ringgit</option>
+      <option value="SEK">SEK - Sweden Krona</option>
+      <option value="SGD">SGD - Singapore Dollar</option>
+      <option value="HKD">HKD - Hong Kong Dollar</option>
+      <option value="AUD">AUD - Australia Dollar </option>
+      <option value="CHF">CHF - Switzerland Franc</option>
+      <option value="KRW">KRW - Korea (South) Won</option>
+      <option value="CNY">CNY - China Yuan Renminbi</option>
+      <option value="TRY">TRY - Turkey Lira  </option>
+      <option value="HRK">HRK - Croatia Kuna </option>
+      <option value="NZD">NZD - New Zealand Dollar</option>
+      <option value="THB">THB - Thailand Baht</option>
+      <option value="USD">USD - United States Dollar </option>
+      <option value="NOK">NOK - Norway Krone </option>
+      <option value="RUB">RUB - Russia Ruble </option>
+      <option value="TINR">TINR - India Rupee  </option>
+      <option value="MXN">MXN - Mexico Peso</option>
+      <option value="CZK">CZK - Czech Republic Koruna</option>
+      <option value="BRL">BRL - Brazil Real</option>
+      <option value="PLN">PLN - Poland Zloty  </option>
+      <option value="PHP">PHP - Philippines Peso  </option>
+      <option value="ZAR">ZAR - South Africa Rand  </option>
+    </select>
+    <h3>Amount: <input name='amount'></h3>
+    <button>submit</button>
+    </form>
+
+    {% block results %}
+    {% endblock %}
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 </body>
 </html>

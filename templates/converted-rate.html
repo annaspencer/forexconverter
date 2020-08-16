@@ -1,0 +1,15 @@
+{% extends "index.html" %}
+{% block results%}
+<div class="alert alert-success" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    <h4 class="alert-heading">Converted Rate:</h4>
+   
+    <p>{{con_from}} to {{con_to}}</p>
+    <p>{{symbol}} {{amount}}</p>
+    <hr>
+    <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+    
+</div>
+{% endblock %}
