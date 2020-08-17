@@ -8,6 +8,7 @@ import math
 app = Flask(__name__)
 app.config['SECRET_KEY'] = "327-446-427"
 debug = DebugToolbarExtension(app)
+app.config['DEBUG_TB_INTERCEPT_REDIRECTS'] = False
 c = CurrencyRates(force_decimal=True)
 cc = CurrencyCodes()
 
@@ -21,7 +22,7 @@ def home_page():
 
 @app.route("/convert")
 def convert():
-    """convert """
+    """gets input, converts via forex converter methods, renders response template or redirect to error"""
     try:
         con_from = request.args["convert_from"]
         con_to = request.args["convert_to"]
@@ -32,12 +33,10 @@ def convert():
         
         return render_template("converted-rate.html", con_from = con_from, con_to = con_to, display_amt = display_amt, symbol = symbol)
     except:
-            return render_template("/error.html")
+            return redirect(url_for('error'))
         
 @app.route("/error")
 def error():
     """display error message"""
 
-    amount = request.args["amount"]
-
-    return render_template("error.html", amount = amount )
+    return render_template("error.html")
