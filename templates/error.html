@@ -1,21 +1,14 @@
 {% extends "index.html" %}
 {% block results%}
-
-
-<div class="alert alert-success" role="alert">
+<div class="alert alert-warning" role="alert">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
-    <h4 class="alert-heading">Converted Rate:</h4>
+    <h4 class="alert-heading">Error:</h4>
    
-    <p>{{con_from}} to {{con_to}}</p>
-    <p>{{symbol}} {{display_amt}}</p>
+    <p>Input not valid. Use only numeric values and decimals. Please try again.</p>
     <hr>
     
     
 </div>
-
-
-
-
 {% endblock %}
