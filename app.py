@@ -21,21 +21,16 @@ def home_page():
 
 @app.route("/convert")
 def convert():
-    """convert"""
+    """convert """
     try:
         con_from = request.args["convert_from"]
         con_to = request.args["convert_to"]
-        amount = request.args["amount"]
-        if any(c.isalpha() for c in amount) :
-            return render_template("/error.html")
-    
-        elif type(Decimal(amount) != float):
-            symbol = cc.get_symbol(con_to)
-            converted_amt = c.convert(con_from, con_to, Decimal(amount))
-    
-            display_amt = round(converted_amt, 2)
+        amount = Decimal(request.args["amount"])
+        symbol = cc.get_symbol(con_to)
+        converted_amt = c.convert(con_from, con_to, amount)
+        display_amt = round(converted_amt, 2)
         
-            return render_template("converted-rate.html", con_from = con_from, con_to = con_to,  amount = amount, display_amt = display_amt, symbol = symbol)
+        return render_template("converted-rate.html", con_from = con_from, con_to = con_to, display_amt = display_amt, symbol = symbol)
     except:
             return render_template("/error.html")
         
